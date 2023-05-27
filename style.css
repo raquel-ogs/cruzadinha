@@ -1,0 +1,55 @@
+:root{
+    --principal: rgb(138, 43, 226);
+    --principal-25-opacidade: rgba(138, 43, 226, 0.25);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.invisivel{
+    outline: none;
+    background: none;
+    border: none;
+    cursor: default;
+    font-size: 1.4vh;
+    text-align:end;
+    box-shadow: none;
+}
+
+.espaco{
+    outline: none;
+    cursor: default;
+    background-color: var(--principal);
+    border: 2px solid;
+    border-color: var(--principal);
+    opacity: 0.5;
+}
+
+td{
+    width: 5vh;
+    height: 5vh;
+}
+
+td div{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+input{
+    width: 4vh;
+    height: 4vh;
+    font-size: 2vh;
+    text-align: center;
+    background-color: var(--principal);
+    border: 2px solid transparent;
+    border-radius: 1vh;
+    box-shadow: 0px 4px 7px var(--principal-25-opacidade);
+    color: white;
+}
