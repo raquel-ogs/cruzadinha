@@ -1,35 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
 :root{
-    --principal: rgb(138, 43, 226);
-    --principal-25-opacidade: rgba(138, 43, 226, 0.25);
+    --principal: rgb(236, 112, 154);
+    --amarelo: rgba(255, 228, 151, 0.5);
+    --azul-claro: #3dc3ff;
+    --verde: #42d48b;
+    --azul-escuro: rgb(11, 88, 132);
+    --principal-25-opacidade: rgba(255, 102, 196, 0.25);
 }
 
 *{
     padding: 0;
     margin: 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Poppins';
+    color: #f3f3f3;
 }
 
-.invisivel{
-    outline: none;
-    background: none;
-    border: none;
-    cursor: default;
-    font-size: 1.4vh;
-    text-align:end;
-    box-shadow: none;
+body{
+    padding-top: 4vh;
+    background-color: #111111;
 }
+
+.titulo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo img{
+    width: 25vw;
+    filter:drop-shadow(0px 7px 4px rgba(255, 255, 255, 0.05));
+}
+.corpo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cruzadinha{
+    width: fit-content;
+}
+
+h1{
+    text-align: center;
+}
+
+.dicas{
+    width: 25vw;
+    height: 60vh;
+    padding: 5vh;
+    background-color: rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    border-radius: 1rem;
+}
+
+.dicas::-webkit-scrollbar{
+    position: fixed;
+    width: 10px;
+    height: 10px;
+}
+
+.dicas::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+}
+
+
+ol{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1vh;
+    width: 80%;
+    height: fit-content;
+}
+
+li::marker{
+    font-weight: 700;
+}
+
+li{
+    width: 100%;
+    font-size: 2vh;
+}
+
 
 .espaco{
     outline: none;
     cursor: default;
-    background-color: var(--principal);
+    background-color: rgba(255, 255, 255, 0.3);
+    filter: blur(0.5px);
     border: 2px solid;
-    border-color: var(--principal);
-    opacity: 0.5;
+    border-color: transparent;
+}
+
+table{
+    width: fit-content;
 }
 
 td{
-    width: 5vh;
+    width: 2.5vw;
     height: 5vh;
 }
 
@@ -43,13 +115,14 @@ td div{
 }
 
 input{
-    width: 4vh;
+    width: 2vw;
     height: 4vh;
-    font-size: 2vh;
+    font-size: 2.5vh;
     text-align: center;
-    background-color: var(--principal);
+    background-color: #F3F3F3;
     border: 2px solid transparent;
     border-radius: 1vh;
-    box-shadow: 0px 4px 7px var(--principal-25-opacidade);
-    color: white;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    color: black;
+    transition: 0.3s all linear;
 }
