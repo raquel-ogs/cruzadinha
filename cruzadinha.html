@@ -1,4 +1,620 @@
-var cpu = 0;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="./script.js"></script> -->
+    <title> Cruzadinha - Arquitetura Computacional </title>
+</head>
+
+<body>
+    <div class="titulo">
+        <img src="./cruzadinha.png">
+    </div>
+    <div class="corpo">
+        <div class="cruzadinha">
+            <!-- TABELA 1 -->
+            <table>
+                <!-- LINHA 1 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 17 </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 11 </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 2 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input class="letra" maxlength="1" id="input_thread_t" oninput="validarPalavras('thread')"></td>
+                    <td>
+                        <div class="numeroPalavra"> 4 </div>
+                    </td>
+                    <td><input maxlength="1" id="input_ram_r" oninput="validarPalavras('ram')"></td>
+                    <td><input maxlength="1" id="input_ram_address_a" oninput="validarPalavras('ram', 'addressBus')"></td>
+                    <td> <input maxlength="1" id="input_ram_m" oninput="validarPalavras('ram')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 7 </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 3 -->
+                <tr>
+                    <td></td>
+                    <td> </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_thread_h" oninput="validarPalavras('thread')"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_addressBus_d1" oninput="validarPalavras('addressBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_flash_f" oninput="validarPalavras('flash')"></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 5 </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 10 </div>
+                    </td>
+                </tr>
+                <!-- LINHA 4 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_thread_r" oninput="validarPalavras('thread')"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_addressBus_d2" oninput="validarPalavras('addressBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 13 </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_flash_l" oninput="validarPalavras('flash')"></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_rom_r" oninput="validarPalavras('rom')"></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 6 </div>
+                    </td>
+                    <td><input maxlength="1" id="input_cs_c" oninput="validarPalavras('cs')"></td>
+                </tr>
+            </table>
+            <!-- TABELA 2 -->
+            <table>
+                <!-- LINHA 1 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_thread_e" oninput="validarPalavras('thread')"></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 3 </div>
+                    </td>
+                    <td><input maxlength="1" id="input_registradores_address_r"
+                            oninput="validarPalavras('registradores', 'addressBus')"></td>
+                    <td><input maxlength="1" id="input_registradores_e" oninput="validarPalavras('registradores')"></td>
+                    <td><input maxlength="1" id="input_registradores_g" oninput="validarPalavras('registradores')"></td>
+                    <td><input maxlength="1" id="input_registradores_i5_i" oninput="validarPalavras('registradores')"></td>
+                    <td><input maxlength="1" id="input_registradores_s" oninput="validarPalavras('registradores')"></td>
+                    <td><input maxlength="1" id="input_registradores_t" oninput="validarPalavras('registradores')"></td>
+                    <td><input maxlength="1" id="input_registradores_r2" oninput="validarPalavras('registradores')"></td>
+                    <td><input maxlength="1" id="input_registradores_flash_a"
+                            oninput="validarPalavras('registradores', 'flash')"></td>
+                    <td><input maxlength="1" id="input_registradores_d" oninput="validarPalavras('registradores')"></td>
+                    <td><input maxlength="1" id="input_registradores_rom_o" oninput="validarPalavras('registradores', 'rom')">
+                    </td>
+                    <td><input maxlength="1" id="input_registradores_r3" oninput="validarPalavras('registradores')"></td>
+                    <td><input maxlength="1" id="input_registradores_eprom_e"
+                            oninput="validarPalavras('registradores', 'eprom')"></td>
+                    <td><input maxlength="1" id="input_registradores_cs_s" oninput="validarPalavras('registradores', 'cs')">
+                    </td>
+                </tr>
+                <!-- LINHA 2 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 18 </div>
+                    </td>
+                    <td><input maxlength="1" id="input_cache_c1" oninput="validarPalavras('cache')"></td>
+                    <td><input maxlength="1" id="input_cache_thread_a" oninput="validarPalavras('cache', 'thread')"></td>
+                    <td><input maxlength="1" id="input_cache_c2" oninput="validarPalavras('cache')"></td>
+                    <td><input maxlength="1" id="input_cache_h" oninput="validarPalavras('cache')"></td>
+                    <td><input maxlength="1" id="input_cache_address_e" oninput="validarPalavras('cache', 'addressBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_i5_5" oninput="validarPalavras('i5')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_flash_s" oninput="validarPalavras('flash')"></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_rom_m" oninput="validarPalavras('rom')"></td>
+                    <td></td>
+                    <td> <input maxlength="1" id="input_eprom_p" oninput="validarPalavras('eprom')"></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 3 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_thread_d" oninput="validarPalavras('thread')"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_addressBus_s1" oninput="validarPalavras('addressBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 12 </div>
+                    </td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_flash_h" oninput="validarPalavras('flash')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_eprom_r" oninput="validarPalavras('eprom')"></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 4 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 14 </div>
+                    </td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_addressBus_s2" oninput="validarPalavras('addressBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_dataBus_d" oninput="validarPalavras('dataBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_eprom_o" oninput="validarPalavras('eprom')"></td>
+                    <td></td>
+                </tr>
+            </table>
+            <!-- TABELA 3 -->
+            <table>
+                <!-- LINHA 1 -->
+                <tr>
+                    <td>
+                        <div class="numeroPalavra"> 8 </div>
+                    </td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_m1" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_e1" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_m2" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_o" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_r" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_i7_i" oninput="validarPalavras('memoriaDeMassa', 'i7')">
+                    </td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_a1" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_d" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_e2" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_m3" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_dataBus_a" oninput="validarPalavras('memoriaDeMassa', 'dataBus')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_s1" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_s2" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td><input maxlength="1" id="input_memoriaDeMassa_a2" oninput="validarPalavras('memoriaDeMassa')"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_eprom_m" oninput="validarPalavras('eprom')"></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 2 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_i7_7" oninput="validarPalavras('i7')"></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_addressBus_b" oninput="validarPalavras('addressBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 9 </div>
+                    </td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_dataBus_t" oninput="validarPalavras('dataBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 3 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_addressBus_u" oninput="validarPalavras('addressBus')"></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 15 </div>
+                    </td>
+                    <td><input maxlength="1" id="input_dualCore_dma_d" oninput="validarPalavras('dualCore', 'dma')"></td>
+                    <td><input maxlength="1" id="input_dualCore_u" oninput="validarPalavras('dualCore')"></td>
+                    <td><input maxlength="1" id="input_dualCore_dataBus_a" oninput="validarPalavras('dualCore', 'dataBus')">
+                    </td>
+                    <td><input maxlength="1" id="input_dualCore_l" oninput="validarPalavras('dualCore')"></td>
+                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td><input maxlength="1" id="input_dualCore_c" oninput="validarPalavras('dualCore')"></td>
+                    <td><input maxlength="1" id="input_dualCore_o" oninput="validarPalavras('dualCore')"></td>
+                    <td><input maxlength="1" id="input_dualCore_r" oninput="validarPalavras('dualCore')"></td>
+                    <td><input maxlength="1" id="input_dualCore_e" oninput="validarPalavras('dualCore')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 4 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_addressBus_s3" oninput="validarPalavras('addressBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_dma_m" oninput="validarPalavras('dma')"></td>
+                    <td></td>
+                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <!-- TABELA 4 -->
+            <table>
+                <!-- LINHA 1 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_dma_a" oninput="validarPalavras('dma')"></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_dataBus_b" oninput="validarPalavras('dataBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 1 </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 2 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 16 </div>
+                    </td>
+                    <td><input maxlength="1" id="input_quadCore_q" oninput="validarPalavras('quadCore')"></td>
+                    <td><input maxlength="1" id="input_quadCore_dataBus_u" oninput="validarPalavras('quadCore', 'dataBus')">
+                    </td>
+                    <td><input maxlength="1" id="input_quadCore_a" oninput="validarPalavras('quadCore')"></td>
+                    <td><input maxlength="1" id="input_quadCore_d" oninput="validarPalavras('quadCore')"></td>
+                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td><input maxlength="1" id="input_quadCore_cpu_c" oninput="validarPalavras('quadCore', 'cpu')"></td>
+                    <td><input maxlength="1" id="input_quadCore_o" oninput="validarPalavras('quadCore')"></td>
+                    <td><input maxlength="1" id="input_quadCore_r" oninput="validarPalavras('quadCore')"></td>
+                    <td><input maxlength="1" id="input_quadCore_e" oninput="validarPalavras('quadCore')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 3 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_dataBus_s" oninput="validarPalavras('dataBus')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input maxlength="1" id="input_cpu_p" oninput="validarPalavras('cpu')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- LINHA 4 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="numeroPalavra"> 2 </div>
+                    </td>
+                    <td><input maxlength="1" id="input_ula_cpu_u" oninput="validarPalavras('ula', 'cpu')"></td>
+                    <td><input maxlength="1" id="input_ula_l" oninput="validarPalavras('ula')"></td>
+                    <td><input maxlength="1" id="input_ula_a" oninput="validarPalavras('ula')"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="dicas">
+            <ol>
+                <li class="item" id="palavra_1">
+                    <span id="texto_palavra_1">
+                        Sou o "cérebro" do computador, responsável por executar e controlar todas as operações. Sou um componente 
+                        essencial em qualquer dispositivo eletrônico, desde computadores pessoais até smartphones e consoles 
+                        de videogame.
+                    </span>
+                </li>
+                <li class="item" id="palavra_2">
+                    <span id="texto_palavra_2">
+                        Sou responsável por realizar operações matemáticas e lógicas, como adição, subtração, multiplicação, 
+                        comparações e operações booleanas.                
+                    </span>
+                </li>
+                <li class="item" id="palavra_3">
+                    <span id="texto_palavra_3">
+                        Nossa função é armazenar temporariamente informações importantes e dados que estão sendo processados 
+                        pela CPU, podemos conter valores de instruções, endereços de memória, resultados intermediários 
+                        de cálculos e outros dados relevantes para o funcionamento do computador.                
+                    </span>
+                </li>
+                <li class="item" id="palavra_4">
+                    <span id="texto_palavra_4">
+                        Sou um componente essencial em computadores e outros dispositivos eletrônicos, minha principal função 
+                        é armazenar temporariamente dados e instruções que estão sendo 
+                        utilizados ativamente pelo processador. Sou volátil.              
+                    </span>
+                </li>
+                <li class="item" id="palavra_5">
+                    <span id="texto_palavra_5">
+                    Sou usada para armazenar dados que não podem ser alterados ou apagados facilmente, minha principal função
+                    é armazenar instruções e dados essenciais para o funcionamento do sistema, como o firmware do dispositivo.             
+                    </span>
+            </li>
+                <li class="item" id="palavra_6">
+                    <span id="texto_palavra_6">
+                    Sou um tipo de memória que pode ser programada e apagada eletricamente para armazenar dados de forma 
+                    permanente, no entanto, minha programação requer a exposição direta a luz ultravioleta para apagar os 
+                    dados armazenados anteriormente.              
+                    </span>
+            </li>
+                <li class="item" id="palavra_7">
+                    <span id="texto_palavra_7">
+                    Sou uma forma de memória não volátil que permite o armazenamento e a reprogramação de dados eletronicamente, 
+                    meu nome é derivado da minha capacidade de realizar operações de gravação e leitura rapidamente.           
+                    </span>
+            </li>
+                <li class="item" id="palavra_8">
+                    <span id="texto_palavra_8">
+                    Minha principal característica é a capacidade de armazenar grandes quantidades de dados, como arquivos, 
+                    programas e sistemas operacionais, sou usada para armazenamento permanente e posso ser acessada 
+                    e lida sempre que necessário.          
+                    </span>
+            </li>
+                <li class="item" id="palavra_9">
+                    <span id="texto_palavra_9">
+                    Sou um recurso de hardware que permite a transferência direta de dados entre dispositivos periféricos e 
+                    a memória principal de um computador, sem a intervenção direta do processador.            
+                    </span>
+            </li>
+                <li class="item" id="palavra_10">
+                    <span id="texto_palavra_10">
+                    Sou um sinal ou linha de controle usado em sistemas digitais para selecionar um chip específico dentro 
+                    de um barramento ou interface, meu propósito é indicar qual dispositivo específico deve receber ou 
+                    enviar dados em um determinado momento.         
+                    </span>
+            </li>
+                <li class="item" id="palavra_11">
+                    <span id="texto_palavra_11">
+                    Sou um processador e pertenço à família Intel Core, Sou conhecido por oferecer um bom equilíbrio 
+                    entre desempenho e preço.
+                    </span>
+            </li>
+                <li class="item" id="palavra_12">
+                    <span id="texto_palavra_12">
+                    Sou um processador e pertenço à família Intel Core, sou conhecido por oferecer desempenho de alta 
+                    potência e capacidade de lidar com tarefas computacionais exigentes.
+                    </span>
+            </li>
+                <li class="item" id="palavra_13">
+                    <span id="texto_palavra_13">
+                        Sou outro componente fundamental de um sistema de computador, porém minha função é transmitir 
+                        informações sobre endereços de memória, sou usado para selecionar a localização específica na 
+                        memória onde os dados devem ser lidos ou gravados.
+                    </span>
+                </li>
+                <li class="item" id="palavra_14">
+                    <span id="texto_palavra_14">
+                        Sou um componente fundamental de um sistema de computador, um conjunto de fios ou 
+                        trilhas eletrônicas que são usados para transmitir dados entre os vários componentes do sistema, 
+                        como a CPU, memória e periféricos, sou responsável pela transferência de dados em paralelo,
+                        permitindo que informações sejam transmitidas em largura de banda maior.
+                    </span>
+                </li>
+                <li class="item" id="palavra_15">
+                    <span id="texto_palavra_15">
+                    Sou um tipo de processador que possui dois núcleos de processamento dentro de um único chip.
+                    </span>
+                </li>
+                <li class="item" id="palavra_16">
+                    <span id="texto_palavra_16">
+                        Sou um tipo de processador que possui quatro núcleos de processamento dentro de um único chip.   
+                    </span>
+                </li>
+                <li class="item" id="palavra_17">
+                    <span id="texto_palavra_17">
+                        Sou unidades de execução individuais dentro de um processo. Posso ser considerado como 
+                        "subprocessos" que compartilham recursos do sistema, como memória e arquivos abertos.     
+                    </span>
+                </li>
+                <li class="item" id="palavra_18">
+                    <span id="texto_palavra_18">
+                        Sou uma memória de alta velocidade e baixa capacidade localizada próxima ao processador, meu objetivo
+                        é armazenar temporariamente dados e instruções que são frequentemente acessados pelo processador.   
+                    </span>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <footer>
+        <span> 💕 Feito por <a href="https://github.com/biiavictorino"> Beatriz Victorino</a>, 
+        <a href="https://github.com/jessicabarreirosm"> Jéssica Barreiros</a>,
+        <a href="https://github.com/raquel-ogs"> Raquel Oliveira</a> 💕 </span>
+      </footer>
+</body>
+</html>
+<script>
+    var cpu = 0;
 var ula = 0;
 var registradores = 0;
 var ram = 0;
@@ -1209,7 +1825,7 @@ function checarPontos() {
         Swal.fire({
             title: 'Parabéns, você completou todas as palavras!',
             width: 400,
-            timer: 2500,
+            timer: 3000,
             showConfirmButton: false,
             padding: '3em',
             color: 'rgb(236, 112, 154)',
@@ -1223,3 +1839,4 @@ function checarPontos() {
         })
     }
 }
+</script>
