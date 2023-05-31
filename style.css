@@ -1,12 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;400;500;600;700;800;900&display=swap');
+
 :root {
+    --rosa: rgb(221, 70, 120);
     --principal: rgb(236, 112, 154);
     --amarelo: rgba(255, 228, 151, 0.5);
     --azul-claro: #3dc3ff --verde: #42d48b;
     --azul-escuro: rgb(11, 88, 132);
     --principal-25-opacidade: rgba(236, 112, 154, 0.25);
     --azul-claro-25-opacidade: rgba(61, 195, 255, 0.25);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    color: #010101;
+    font-family: 'Work Sans';
+}
+
+body {
+    padding-top: 4vh;
+    background-color: #F3F3F3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3vh;
 }
 
 /* Estilizição do Scroll, parte INTEIRA / PRINCIPAL*/
@@ -24,22 +42,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background: var(--principal);
     border-radius: 100px;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    color: #010101;
-    font-family: 'Work Sans';
-}
-
-body {
-    padding-top: 4vh;
-    background-color: #F3F3F3;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 3vh;
 }
 
 a{
@@ -63,7 +65,7 @@ footer{
     justify-content: center;
     font-family: 'Work Sans';
     font-weight: 500;
-    font-size: 2.5vh;
+    font-size: 2vh;
 }
 
 .titulo {
@@ -84,10 +86,6 @@ footer{
     align-items: center;
 }
 
-.cruzadinha {
-    width: fit-content;
-}
-
 h1 {
     text-align: center;
 }
@@ -99,9 +97,8 @@ h1 {
     background-color: var(--principal-25-opacidade);
     display: flex;
     justify-content: center;
-    overflow-y: auto;
+    overflow-y: scroll;
     border-radius: 1rem;
-
 }
 
 /* Estilizição do Scroll, parte INTEIRA / PRINCIPAL*/
@@ -121,6 +118,10 @@ h1 {
     border-radius: 100px;
 }
 
+.cruzadinha {
+    width: fit-content;
+}
+
 ol {
     display: flex;
     flex-wrap: wrap;
@@ -130,22 +131,14 @@ ol {
 }
 
 li::marker {
-    font-weight: 700;
-}
+    font-weight: 800;
+    font-size: 2.2vh;
+    color: var(--principal);}
 
 li {
     width: 100%;
     font-size: 2vh;
-}
-
-.espaco {
-    outline: none;
-    cursor: default;
-    background-color: var(--principal);
-    filter: blur(0.5px);
-    border: 2px solid;
-    border-color: transparent;
-    opacity: 0.5;
+    transition: 0.5s all linear;
 }
 
 table {
@@ -177,4 +170,14 @@ input {
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
     color: black;
     transition: 0.3s all linear;
+}
+
+.espaco {
+    outline: none;
+    cursor: default;
+    background-color: var(--principal);
+    filter: blur(0.5px);
+    border: 2px solid;
+    border-color: transparent;
+    opacity: 0.5;
 }

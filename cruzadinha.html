@@ -7,13 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
     <!-- <script src="./script.js"></script> -->
     <title> Cruzadinha - Arquitetura Computacional </title>
 </head>
 
 <body>
     <div class="titulo">
-        <img src="./cruzadinha.png">
+        <a href="./index.html">
+            <img src="./cruzadinha.png">
+        </a>
     </div>
     <div class="corpo">
         <div class="cruzadinha">
@@ -259,10 +262,10 @@
                     <td><input maxlength="1" id="input_memoriaDeMassa_i7_i" oninput="validarPalavras('memoriaDeMassa', 'i7')">
                     </td>
                     <td><input maxlength="1" id="input_memoriaDeMassa_a1" oninput="validarPalavras('memoriaDeMassa')"></td>
-                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td><input id="espaco_memoriaDeMassa1" class="espaco" maxlength="0" readonly></td>
                     <td><input maxlength="1" id="input_memoriaDeMassa_d" oninput="validarPalavras('memoriaDeMassa')"></td>
                     <td><input maxlength="1" id="input_memoriaDeMassa_e2" oninput="validarPalavras('memoriaDeMassa')"></td>
-                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td><input id="espaco_memoriaDeMassa2" class="espaco" maxlength="0" readonly></td>
                     <td><input maxlength="1" id="input_memoriaDeMassa_m3" oninput="validarPalavras('memoriaDeMassa')"></td>
                     <td><input maxlength="1" id="input_memoriaDeMassa_dataBus_a" oninput="validarPalavras('memoriaDeMassa', 'dataBus')"></td>
                     <td><input maxlength="1" id="input_memoriaDeMassa_s1" oninput="validarPalavras('memoriaDeMassa')"></td>
@@ -286,9 +289,7 @@
                     <td><input maxlength="1" id="input_addressBus_b" oninput="validarPalavras('addressBus')"></td>
                     <td></td>
                     <td></td>
-                    <td>
-                        <div class="numeroPalavra"> 9 </div>
-                    </td>
+                    <td><div class="numeroPalavra"> 9 </div></td>
                     <td></td>
                     <td><input maxlength="1" id="input_dataBus_t" oninput="validarPalavras('dataBus')"></td>
                     <td></td>
@@ -323,7 +324,7 @@
                     <td><input maxlength="1" id="input_dualCore_dataBus_a" oninput="validarPalavras('dualCore', 'dataBus')">
                     </td>
                     <td><input maxlength="1" id="input_dualCore_l" oninput="validarPalavras('dualCore')"></td>
-                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td><input id="espaco_dualCore" class="espaco" maxlength="0" readonly></td>
                     <td><input maxlength="1" id="input_dualCore_c" oninput="validarPalavras('dualCore')"></td>
                     <td><input maxlength="1" id="input_dualCore_o" oninput="validarPalavras('dualCore')"></td>
                     <td><input maxlength="1" id="input_dualCore_r" oninput="validarPalavras('dualCore')"></td>
@@ -349,7 +350,7 @@
                     <td></td>
                     <td><input maxlength="1" id="input_dma_m" oninput="validarPalavras('dma')"></td>
                     <td></td>
-                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td><input id="espaco_dataBus" class="espaco" maxlength="0" readonly></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -416,7 +417,7 @@
                     </td>
                     <td><input maxlength="1" id="input_quadCore_a" oninput="validarPalavras('quadCore')"></td>
                     <td><input maxlength="1" id="input_quadCore_d" oninput="validarPalavras('quadCore')"></td>
-                    <td><input class="espaco" maxlength="0" readonly></td>
+                    <td><input id="espaco_quadCore" class="espaco" maxlength="0" readonly></td>
                     <td><input maxlength="1" id="input_quadCore_cpu_c" oninput="validarPalavras('quadCore', 'cpu')"></td>
                     <td><input maxlength="1" id="input_quadCore_o" oninput="validarPalavras('quadCore')"></td>
                     <td><input maxlength="1" id="input_quadCore_r" oninput="validarPalavras('quadCore')"></td>
@@ -553,34 +554,34 @@
                     de um barramento ou interface, meu propósito é indicar qual dispositivo específico deve receber ou 
                     enviar dados em um determinado momento.         
                     </span>
-            </li>
                 <li class="item" id="palavra_11">
                     <span id="texto_palavra_11">
-                    Sou um processador e pertenço à família Intel Core, Sou conhecido por oferecer um bom equilíbrio 
-                    entre desempenho e preço.
-                    </span>
-            </li>
-                <li class="item" id="palavra_12">
-                    <span id="texto_palavra_12">
-                    Sou um processador e pertenço à família Intel Core, sou conhecido por oferecer desempenho de alta 
-                    potência e capacidade de lidar com tarefas computacionais exigentes.
-                    </span>
-            </li>
-                <li class="item" id="palavra_13">
-                    <span id="texto_palavra_13">
                         Sou outro componente fundamental de um sistema de computador, porém minha função é transmitir 
                         informações sobre endereços de memória, sou usado para selecionar a localização específica na 
                         memória onde os dados devem ser lidos ou gravados.
                     </span>
                 </li>
-                <li class="item" id="palavra_14">
-                    <span id="texto_palavra_14">
+                <li class="item" id="palavra_12">
+                    <span id="texto_palavra_12">
                         Sou um componente fundamental de um sistema de computador, um conjunto de fios ou 
                         trilhas eletrônicas que são usados para transmitir dados entre os vários componentes do sistema, 
                         como a CPU, memória e periféricos, sou responsável pela transferência de dados em paralelo,
                         permitindo que informações sejam transmitidas em largura de banda maior.
                     </span>
                 </li>
+            </li>
+            <li class="item" id="palavra_13">
+                <span id="texto_palavra_13">
+                Sou um processador e pertenço à família Intel Core, Sou conhecido por oferecer um bom equilíbrio 
+                entre desempenho e preço.
+                </span>
+            </li>
+                <li class="item" id="palavra_14">
+                    <span id="texto_palavra_14">
+                    Sou um processador e pertenço à família Intel Core, sou conhecido por oferecer desempenho de alta 
+                    potência e capacidade de lidar com tarefas computacionais exigentes.
+                    </span>
+            </li>
                 <li class="item" id="palavra_15">
                     <span id="texto_palavra_15">
                     Sou um tipo de processador que possui dois núcleos de processamento dentro de um único chip.
@@ -636,6 +637,7 @@ var cache = 0;
 
 var principal = 'rgb(236, 112, 154)';
 // var principal = '#3dc3ff';
+var preto = '#000'
 var verde = '#42d48b';
 var vermelho = '#FF4949';
 
@@ -651,10 +653,13 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             p_cpu.style.backgroundColor = verde;
             u_cpu.style.backgroundColor = verde;
             cpu = 1;
-            palavra_1.style.textDecoration = 'line-through'
+            palavra_1.style.textDecoration = 'line-through';
+            palavra_1.style.opacity = 0.5;  
+
         } else {
             cpu = 0;
-            palavra_1.style.textDecoration = 'none'
+            palavra_1.style.textDecoration = 'none';
+            palavra_1.style.opacity = 1;
 
             if (c_cpu.value.toLowerCase() == 'c') {
                 c_cpu.style.backgroundColor = verde;
@@ -682,7 +687,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
         }
 
         // ----------------- ula ------------------------------------------------------
-    } else if (palavra1 == 'ula' || palavra2 == 'ula') {
+    } if (palavra1 == 'ula' || palavra2 == 'ula') {
         var u_ula = document.getElementById('input_ula_cpu_u');
         var l_ula = document.getElementById('input_ula_l');
         var a_ula = document.getElementById('input_ula_a');
@@ -693,10 +698,13 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             a_ula.style.backgroundColor = verde;
 
             ula = 1;
-            palavra_2.style.textDecoration = 'line-through'
+            palavra_2.style.textDecoration = 'line-through';
+            palavra_2.style.opacity = 0.5;       
+
         } else {
             ula = 0;
-            palavra_2.style.textDecoration = 'none'
+            palavra_2.style.textDecoration = 'none';
+            palavra_2.style.opacity = 1;       
 
             if (l_ula.value.toLowerCase() == 'l') {
                 l_ula.style.backgroundColor = verde;
@@ -716,7 +724,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
         }
 
         // ---------------- registradores ----------------------------------------
-    } else if (palavra1 == 'registradores' || palavra2 == 'registradores') {
+    } if (palavra1 == 'registradores' || palavra2 == 'registradores') {
         var r1_registradores = document.getElementById('input_registradores_address_r');
         var e1_registradores = document.getElementById('input_registradores_e');
         var g_registradores = document.getElementById('input_registradores_g');
@@ -751,11 +759,14 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             e2_registradores.style.backgroundColor = verde;
             s2_registradores.style.backgroundColor = verde;
 
-            palavra_3.style.textDecoration = 'line-through'
             registradores = 1;
+            palavra_3.style.textDecoration = 'line-through';
+            palavra_3.style.opacity = 0.5;       
+
         } else {
             registradores = 0;
-            palavra_3.style.textDecoration = 'none';           
+            palavra_3.style.textDecoration = 'none';  
+            palavra_3.style.opacity = 1;                
 
             if (r1_registradores.value.toLowerCase() == 'r') {
                 r1_registradores.style.backgroundColor = verde;
@@ -862,7 +873,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             }
         }
         // --------------- ram --------------------------------------
-    } else if (palavra1 == 'ram' || palavra2 == 'ram') {
+    } if (palavra1 == 'ram' || palavra2 == 'ram') {
         var r_ram = document.getElementById('input_ram_r');
         var a_ram = document.getElementById('input_ram_address_a');
         var m_ram = document.getElementById('input_ram_m');
@@ -873,12 +884,14 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             m_ram.style.backgroundColor = verde;
 
             ram = 1;
-            palavra_4.style.textDecoration = 'line-through';    
+            palavra_4.style.textDecoration = 'line-through';
+            palavra_4.style.opacity = 0.5;           
 
         } else {
 
             ram = 0;
             palavra_4.style.textDecoration = 'none'; 
+            palavra_4.style.opacity = 1;       
 
             if (r_ram.value.toLowerCase() == 'r') {
                 r_ram.style.backgroundColor = verde;
@@ -906,7 +919,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
         }
 
 // ------------------------- rom ----------------------------------
-    } else if (palavra1 == 'rom' || palavra2 == 'rom') {
+    } if (palavra1 == 'rom' || palavra2 == 'rom') {
         var r_rom = document.getElementById('input_rom_r');
         var o_rom = document.getElementById('input_registradores_rom_o');
         var m_rom = document.getElementById('input_rom_m');
@@ -917,10 +930,13 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             m_rom.style.backgroundColor = verde;
 
             rom = 1;
-            palavra_5.style.textDecoration = 'line-through';           
+            palavra_5.style.textDecoration = 'line-through';      
+            palavra_5.style.opacity = 0.5;       
+     
         } else {
             rom = 0;
-            palavra_5.style.textDecoration = 'none';           
+            palavra_5.style.textDecoration = 'none';       
+            palavra_5.style.opacity = 1;           
 
             if (r_rom.value.toLowerCase() == 'r') {
                 r_rom.style.backgroundColor = verde;
@@ -948,7 +964,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
         }
 
     // ------------------- eprom --------------------------
-    } else if (palavra1 == 'eprom' || palavra2 == 'eprom') {
+    } if (palavra1 == 'eprom' || palavra2 == 'eprom') {
         var e_eprom = document.getElementById('input_registradores_eprom_e');
         var p_eprom = document.getElementById('input_eprom_p');
         var r_eprom = document.getElementById('input_eprom_r');
@@ -965,10 +981,12 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             m_eprom.style.backgroundColor = verde;
 
             eprom = 1;
-            palavra_6.style.textDecoration = 'line-through';           
+            palavra_6.style.textDecoration = 'line-through';       
+            palavra_6.style.opacity = 0.5;       
         } else {
             eprom = 0;
-            palavra_6.style.textDecoration = 'none';           
+            palavra_6.style.textDecoration = 'none';      
+            palavra_6.style.opacity = 1;            
             
             if (p_eprom.value.toLowerCase() == 'p') {
                 p_eprom.style.backgroundColor = verde;
@@ -1011,7 +1029,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             }
         }
     // ------------------- flash --------------------------
-    } else if (palavra1 == 'flash' || palavra2 == 'flash') {
+    } if (palavra1 == 'flash' || palavra2 == 'flash') {
         var f_flash = document.getElementById('input_flash_f');
         var l_flash = document.getElementById('input_flash_l');
         var a_flash = document.getElementById('input_registradores_flash_a');
@@ -1021,17 +1039,20 @@ function validarPalavras(palavra1, palavra2, palavra3) {
         if (f_flash.value.toLowerCase() == 'f' && l_flash.value.toLowerCase() == 'l' 
         && a_flash.value.toLowerCase() == 'a' && s_flash.value.toLowerCase() == 's' 
         && h_flash.value.toLowerCase() == 'h'){
-            f_flash.style.backgroundColor = verde
-            l_flash.style.backgroundColor = verde
-            a_flash.style.backgroundColor = verde
-            s_flash.style.backgroundColor = verde
-            h_flash.style.backgroundColor = verde
+            f_flash.style.backgroundColor = verde;
+            l_flash.style.backgroundColor = verde;
+            a_flash.style.backgroundColor = verde;
+            s_flash.style.backgroundColor = verde;
+            h_flash.style.backgroundColor = verde;
 
             flash = 1;
-            palavra_7.style.textDecoration = 'line-through';           
+            palavra_7.style.textDecoration = 'line-through';   
+            palavra_7.style.opacity = 0.5;  
+
         } else {
             flash = 0;
-            palavra_7.style.textDecoration = 'none';           
+            palavra_7.style.textDecoration = 'none';   
+            palavra_7.style.opacity = 1;             
 
             if (f_flash.value.toLowerCase() == 'f') {
                 f_flash.style.backgroundColor = verde;
@@ -1051,7 +1072,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
 
             if (a_flash.value.toLowerCase() == 'a') {
                 a_flash.style.backgroundColor = verde;
-            } else if (r_flash.value == '') {
+            } else if (a_flash.value == '') {
                 a_flash.style.backgroundColor = principal;
             } else {
                 a_flash.style.backgroundColor = vermelho;
@@ -1074,7 +1095,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             }
         }
     // ------------------- memoriaDeMassa --------------------------
-    } else if (palavra1 == 'memoriaDeMassa' || palavra2 == 'memoriaDeMassa') {
+    } if (palavra1 == 'memoriaDeMassa' || palavra2 == 'memoriaDeMassa') {
         var m1_memoriaDeMassa = document.getElementById('input_memoriaDeMassa_m1');
         var e1_memoriaDeMassa = document.getElementById('input_memoriaDeMassa_e1');
         var m2_memoriaDeMassa = document.getElementById('input_memoriaDeMassa_m2');
@@ -1112,12 +1133,17 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             s1_memoriaDeMassa.style.backgroundColor = verde;
             s2_memoriaDeMassa.style.backgroundColor = verde;
             a2_memoriaDeMassa.style.backgroundColor = verde;
-            
+            espaco_memoriaDeMassa1.style.backgroundColor = preto;
+            espaco_memoriaDeMassa2.style.backgroundColor = preto;
             memoriaDeMassa = 1;
             palavra_8.style.textDecoration = 'line-through'
+            palavra_8.style.opacity = 0.5;     
         } else {
             memoriaDeMassa = 0;
-            palavra_8.style.textDecoration = 'none';           
+            palavra_8.style.textDecoration = 'none';     
+            palavra_8.style.opacity = 1;     
+            espaco_memoriaDeMassa1.style.backgroundColor = principal;
+            espaco_memoriaDeMassa2.style.backgroundColor = principal;      
 
             if (m1_memoriaDeMassa.value.toLowerCase() == 'm') {
                 m1_memoriaDeMassa.style.backgroundColor = verde;
@@ -1243,10 +1269,12 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             m_dma.style.backgroundColor = verde;
             a_dma.style.backgroundColor = verde;
             dma = 1;
-            palavra_9.style.textDecoration = 'line-through';           
+            palavra_9.style.textDecoration = 'line-through';     
+            palavra_9.style.opacity = 0.5;           
         } else {
             dma = 0;
-            palavra_9.style.textDecoration = 'none';           
+            palavra_9.style.textDecoration = 'none';   
+            palavra_9.style.opacity = 1;             
             
             if (d_dma.value.toLowerCase() == 'd') {
                 d_dma.style.backgroundColor = verde;
@@ -1274,17 +1302,19 @@ function validarPalavras(palavra1, palavra2, palavra3) {
         }
     }
     // ------------------------- cs ----------------------------------
-    else if (palavra1 == 'cs' || palavra2 == 'cs') {
+    if (palavra1 == 'cs' || palavra2 == 'cs') {
         var c_cs = document.getElementById('input_cs_c');
         var s_cs = document.getElementById('input_registradores_cs_s');
 
         if (c_cs.value.toLowerCase() == 'c' && s_cs.value.toLowerCase() == 's') {
             c_cs.style.backgroundColor = verde;
             cs = 1;
-            palavra_10.style.textDecoration = 'line-through';           
+            palavra_10.style.textDecoration = 'line-through'; 
+            palavra_10.style.opacity = 0.5;             
         } else {
             cs = 0;
-            palavra_10.style.textDecoration = 'none';           
+            palavra_10.style.textDecoration = 'none';     
+            palavra_10.style.opacity = 1;             
 
             if (c_cs.value.toLowerCase() == 'c') {
                 c_cs.style.backgroundColor = verde;
@@ -1295,7 +1325,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             }
         }
     // ------------------------- addressBus ----------------------------------
-    } else if (palavra1 == 'addressBus' || palavra2 == 'addressBus') {
+    } if (palavra1 == 'addressBus' || palavra2 == 'addressBus') {
         var a_adressBus = document.getElementById('input_ram_address_a');
         var d1_adressBus = document.getElementById('input_addressBus_d1');
         var d2_adressBus = document.getElementById('input_addressBus_d2');
@@ -1321,11 +1351,13 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             b_adressBus.style.backgroundColor = verde;
             u_adressBus.style.backgroundColor = verde;
             s3_adressBus.style.backgroundColor = verde;
-            adressBus = 1;
-            palavra_11.style.textDecoration = 'line-through';           
+            addressBus = 1;
+            palavra_11.style.textDecoration = 'line-through';
+            palavra_11.style.opacity = 0.5;   
         } else {
-            adressBus = 0;
-            palavra_11.style.textDecoration = 'none';           
+            addressBus = 0;
+            palavra_11.style.textDecoration = 'none';
+            palavra_11.style.opacity = 1;            
 
             if (d1_adressBus.value.toLowerCase() == 'd') {
                 d1_adressBus.style.backgroundColor = verde;
@@ -1394,7 +1426,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             
         } 
         // ---------------------dataBus ------------------------------------------
-    }else if (palavra1 == 'dataBus' || palavra2 == 'dataBus' || palavra3 == 'dataBus') {
+    }if (palavra1 == 'dataBus' || palavra2 == 'dataBus' || palavra3 == 'dataBus') {
         var d_dataBus = document.getElementById('input_dataBus_d');
         var a1_dataBus = document.getElementById('input_memoriaDeMassa_dataBus_a');
         var t_dataBus = document.getElementById('input_dataBus_t');
@@ -1414,11 +1446,16 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             b_dataBus.style.backgroundColor = verde;
             u_dataBus.style.backgroundColor = verde;
             s_dataBus.style.backgroundColor = verde;
+            espaco_dataBus.style.backgroundColor = preto;
+
             dataBus = 1;
-            palavra_12.style.textDecoration = 'line-through';    
+            palavra_12.style.textDecoration = 'line-through';
+            palavra_12.style.opacity = 0.5;    
         } else {
             dataBus = 0;
-            palavra_12.style.textDecoration = 'none';           
+            espaco_dataBus.style.backgroundColor = principal;
+            palavra_12.style.textDecoration = 'none';
+            palavra_12.style.opacity = 1;   
 
             if (d_dataBus.value.toLowerCase() == 'd') {
                 d_dataBus.style.backgroundColor = verde;
@@ -1478,17 +1515,21 @@ function validarPalavras(palavra1, palavra2, palavra3) {
         }  
         
     // ------------------------- i5 ----------------------------------
-    } else if (palavra1 == 'i5' || palavra2 == 'i5') {
+    } if (palavra1 == 'i5' || palavra2 == 'i5') {
         var i_i5 = document.getElementById('input_registradores_i5_i');
         var i5_5 = document.getElementById('input_i5_5');
 
         if (i_i5.value.toLowerCase() == 'i' && i5_5.value.toLowerCase() == '5') {
             i5_5.style.backgroundColor = verde;
+
             i5 = 1;
-            palavra_13.style.textDecoration = 'line-through';            
+            palavra_13.style.textDecoration = 'line-through'; 
+            palavra_13.style.opacity = 0.5;
+           
         } else {
             i5 = 0;
-            palavra_13.style.textDecoration = 'none';           
+            palavra_13.style.textDecoration = 'none';
+            palavra_13.style.opacity = 1;           
 
             if (i5_5.value.toLowerCase() == '5') {
                 i5_5.style.backgroundColor = verde;
@@ -1500,16 +1541,18 @@ function validarPalavras(palavra1, palavra2, palavra3) {
         }
 
     // ------------------------- i7 ----------------------------------
-    } else if (palavra1 == 'i7' || palavra2 == 'i7') {
+    } if (palavra1 == 'i7' || palavra2 == 'i7') {
         var i_i7 = document.getElementById('input_memoriaDeMassa_i7_i');
         var i7_7 = document.getElementById('input_i7_7');
 
         if (i_i7.value.toLowerCase() == 'i' && Number(i7_7.value) == 7) {
             i7_7.style.backgroundColor = verde;
             palavra_14.style.textDecoration = 'line-through';
+            palavra_14.style.opacity = 0.5;
         } else {
             i7 = 0;
-            palavra_14.style.textDecoration = 'none';           
+            palavra_14.style.textDecoration = 'none';
+            palavra_14.style.opacity = 1; 
 
             if (i7_7.value.toLowerCase() == '7') {
                 i7_7.style.backgroundColor = verde;
@@ -1542,12 +1585,17 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             o_dualCore.style.backgroundColor = verde;
             r_dualCore.style.backgroundColor = verde;
             e_dualCore.style.backgroundColor = verde;
+            espaco_dualCore.style.backgroundColor = preto;
+
             dualCore = 1;
             palavra_15.style.textDecoration = 'line-through';
+            palavra_15.style.opacity = 0.5;       
 
         } else {
             dualCore = 0;
+            espaco_dualCore.style.backgroundColor = principal;
             palavra_15.style.textDecoration = 'none';
+            palavra_15.style.opacity = 1;       
 
             if (d_dualCore.value.toLowerCase() == 'd') {
                 d_dualCore.style.backgroundColor = verde;
@@ -1616,7 +1664,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
 
 
         // ---------------- quadCore ----------------------------------------
-        } else if(palavra1 == 'quadCore' || palavra2 == 'quadCore'){
+        } if(palavra1 == 'quadCore' || palavra2 == 'quadCore'){
             var q_quadCore = document.getElementById('input_quadCore_q');
             var u_qualCore = document.getElementById('input_quadCore_dataBus_u');
             var a_quadCore = document.getElementById('input_quadCore_a');
@@ -1635,14 +1683,18 @@ function validarPalavras(palavra1, palavra2, palavra3) {
                 o_quadCore.style.backgroundColor = verde;
                 r_quadCore.style.backgroundColor = verde;
                 e_quadCore.style.backgroundColor = verde;
+                espaco_quadCore.style.backgroundColor = preto;
 
                 quadCore = 1;
                 palavra_16.style.textDecoration = 'line-through';
+                palavra_16.style.opacity = 0.5;       
 
             } else {
 
                 quadCore = 0;
+                espaco_quadCore.style.backgroundColor = principal;
                 palavra_16.style.textDecoration = 'none';
+                palavra_16.style.opacity = 1;       
 
                 if (q_quadCore.value.toLowerCase() == 'q') {
                     q_quadCore.style.backgroundColor = verde;
@@ -1693,7 +1745,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
                 }
             } 
     // ------------------- thread --------------------------
-    } else if (palavra1 == 'thread' || palavra2 == 'thread') {
+    } if (palavra1 == 'thread' || palavra2 == 'thread') {
         var t_thread = document.getElementById('input_thread_t');
         var h_thread = document.getElementById('input_thread_h');
         var r_thread = document.getElementById('input_thread_r');
@@ -1712,10 +1764,12 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             d_thread.style.backgroundColor = verde;
             thread = 1;
             palavra_17.style.textDecoration = 'line-through';
+            palavra_17.style.opacity = 0.5;       
 
         } else {
             thread = 0;
             palavra_17.style.textDecoration = 'none';
+            palavra_17.style.opacity = 1;       
 
             if (t_thread.value.toLowerCase() == 't') {
                 t_thread.style.backgroundColor = verde;
@@ -1767,7 +1821,7 @@ function validarPalavras(palavra1, palavra2, palavra3) {
         } 
         
     // ------------------- cache --------------------------
-    } else if (palavra1 == 'cache' || palavra2 == 'cache') {
+    } if (palavra1 == 'cache' || palavra2 == 'cache') {
         var c1_cache = document.getElementById('input_cache_c1');
         var a_cache = document.getElementById('input_cache_thread_a'); 
         var c2_cache = document.getElementById('input_cache_c2');
@@ -1783,11 +1837,13 @@ function validarPalavras(palavra1, palavra2, palavra3) {
             e_cache.style.backgroundColor = verde;
 
             cache = 1;
-            palavra_18.style.textDecoration = 'line-through';      
+            palavra_18.style.textDecoration = 'line-through';     
+            palavra_18.style.opacity = 0.5;        
 
         } else {
             cache = 0;
-            palavra_18.style.textDecoration = 'none';           
+            palavra_18.style.textDecoration = 'none';  
+            palavra_18.style.opacity = 1;                
 
             if (c1_cache.value.toLowerCase() == 'c') {
                 c1_cache.style.backgroundColor = verde;
@@ -1825,7 +1881,7 @@ function checarPontos() {
         Swal.fire({
             title: 'Parabéns, você completou todas as palavras!',
             width: 400,
-            timer: 3000,
+            timer: 3500,
             showConfirmButton: false,
             padding: '3em',
             color: 'rgb(236, 112, 154)',
